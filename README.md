@@ -1,9 +1,6 @@
 
 # 🚘 LocaCars: Mini Sistema de Aluguel de Carros (estudo)
 
-> [!NOTE]
-> Sistema web para gestão de aluguéis de automóveis: clientes pedem carros pela internet e agentes (empresas e bancos) avaliam os pedidos.
-
 ---
 
 ## 🚧 Status do Projeto
