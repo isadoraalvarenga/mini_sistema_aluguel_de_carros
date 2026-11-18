@@ -5,11 +5,16 @@ import org.springframework.stereotype.Service;
 import com.aluguelcarros.model.Cliente;
 import com.aluguelcarros.repository.ClienteRepository;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
+import com.aluguelcarros.repository.PedidoRepository;
 
 @Service 
 public class ClienteService{
     @Autowired 
     private ClienteRepository repository;
+
+    @Autowired
+    private PedidoRepository pedidoRepository;
 
     public Cliente salvarCliente(Cliente cliente){
         return repository.save(cliente);
@@ -19,9 +24,11 @@ public class ClienteService{
         return repository.findAll();
     }
 
-    public void excluirCliente(Long id){
-        repository.deleteById(id);
-    }
+    @Transactional
+    public void excluirCliente(Long id) {
+    pedidoRepository.deleteByClienteId(id);
+    repository.deleteById(id);
+}
 
     public Cliente login(String cpf, String senha) {
     return repository.findByCpfAndSenha(cpf, senha);
