@@ -1,0 +1,10 @@
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f7fa;
+  color: #222;
+}

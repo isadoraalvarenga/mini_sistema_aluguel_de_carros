@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/* ---------- Login / Cadastro ---------- */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: #f3f0fb;
+}
+
+.bg-icons {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  padding: 30px;
+  font-size: 2rem;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+}
+
+.login-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.avatar-circle {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #ede9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #5b21b6;
+  font-size: 1.3rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 0.88rem;
+  margin: 4px 0 18px;
+}
+
+.tabs,
+.role-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tabs button,
+.role-selector button {
+  flex: 1;
+  padding: 8px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  background: #5b21b6;
+  border-color: #5b21b6;
+  color: #fff;
+}
+
+.role-selector button.active {
+  background: #ffedd5;
+  border-color: #f97316;
+  color: #c2410c;
+}
+
+/* ---------- Formulários ---------- */
+.form-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 9px 10px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-group input:focus {
+  outline: 2px solid #ede9fe;
+  border-color: #5b21b6;
+}
+
+/* ---------- Botões ---------- */
+.btn-primary {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  background: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #ea580c;
+}
+
+.btn-secondary,
+.btn-approve {
+  padding: 6px 12px;
+  background: #5b21b6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary:hover,
+.btn-approve:hover {
+  background: #4c1d95;
+}
+
+.btn-reject {
+  padding: 6px 12px;
+  background: #c2410c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reject:hover {
+  background: #9a3412;
+}
+
+/* ---------- Barra superior ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #5b21b6;
+  color: #fff;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links > button {
+  padding: 6px 10px;
+  background: transparent;
+  color: #ede9fe;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-links > button:hover,
+.nav-links > button.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.search-box {
+  width: 220px;
+  padding: 7px 10px;
+  background: #fff;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+}
+
+.nav-links > .btn-logout {
+  background: #f97316;
+  color: #fff;
+}
+
+.nav-links > .btn-logout:hover {
+  background: #ea580c;
+}
+
+.hamburger {
+  display: none;
+  padding: 4px 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* ---------- Conteúdo ---------- */
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.header-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.header-bar h1 {
+  font-size: 1.4rem;
+}
+
+/* grade que se ajusta sozinha (mesma ideia do auto-fill da AV2) */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.car-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #eee;
+}
+
+.car-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+}
+
+.car-title {
+  margin: 6px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.car-meta {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.badge-available {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #ede9fe;
+  color: #5b21b6;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---------- Painéis e tabelas ---------- */
+.panel {
+  margin-bottom: 20px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.panel h3 {
+  margin-bottom: 14px;
+  color: #5b21b6;
+  font-size: 1.1rem;
+}
+
+.vazio {
+  text-align: center;
+  padding: 32px 18px;
+}
+
+.vazio p {
+  margin-top: 6px;
+  color: #666;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f7f7fa;
+  color: #555;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-PENDENTE {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.status-APROVADO {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.status-REPROVADO,
+.status-CANCELADO {
+  background: #eee;
+  color: #555;
+}
+
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.inline-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.inline-form .btn-primary {
+  margin-top: 0;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    background: #4c1d95;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
